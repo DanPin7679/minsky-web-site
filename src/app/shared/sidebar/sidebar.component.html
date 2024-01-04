@@ -1,0 +1,17 @@
+<div
+  class="flex flex-col gap-6 px-6 pt-12 h-full bg-slate-900 border-r-2 border-slate-800"
+>
+  <p class="text-xl">Minsky Quick Introduction</p>
+  <ul>
+    @for (section of sections; track section.id) {
+    <li class="py-1">
+      <div class="flex gap-4" (click)="onClick(section.id)">
+        <p>{{ section.id }}.</p>
+        <p>
+          {{ section.title }}
+        </p>
+      </div>
+    </li>
+    }
+  </ul>
+</div>

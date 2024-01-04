@@ -1,0 +1,133 @@
+<div class="flex">
+  <app-sidebar
+    (sectionChanged)="newSection($event)"
+    [sections]="sections"
+    class="sticky basis-1/3"
+  ></app-sidebar>
+  <div class="mx-64 my-12 basis-3/4">
+    <h1 class="text-2xl font-bold">{{ section.title }}</h1>
+
+    @switch (section.id) { @case (1) {
+
+    <p class="my-2">
+      Minsky is an Open-Source system-dynamics program. Open-Source means that
+      its code is readily available, and that it is free. To use it, download it
+      from https://sourceforge.net/projects/minsky/, and install it on your
+      computer.
+    </p>
+    <p class="my-2">
+      System-dynamics means that it can model two or more factors which cause
+      changes in each other over time. A simple model of population growth with
+      just one species—Fish, for example—is not a system. It generates the
+      familiar exponential curve of fish numbers growing forever—see Figure 1.
+    </p>
+
+    <p>
+      Nor is a model of population decay with just one species—say, Sharks with
+      no Fish to eat—a system. It generates the opposite effect of exponential
+      decay—see Figure 2 (presumably, the sharks are eating each other as their
+      numbers fall).
+    </p>
+
+    <p class="my-2">
+      But a model with both Fish and Sharks is a system, and it has a surprising
+      outcome: it never settles down to an equilibrium. Instead, as Figure 3
+      illustrates, the number of fish and sharks rise and fall in cycles that go
+      on forever.
+    </p>
+    <p>
+      The capacity that system dynamics programs have to model feedback effects
+      between variables frees the modeler from the tyranny of “ceteris
+      paribus”—the bedrock assumption of a conventional first-year course in
+      economics that “all other things remain equal”.
+    </p>
+    <p class="my-2">
+      With a system dynamics program, you no longer have to make that manifestly
+      assumption, and a much richer and more informative model of the world
+      emerges—for instance, the “predator-prey” model indicates that not all
+      years are the same when you take the risk of sharing the ocean with
+      sharks. System dynamics programs were first invented in the 1950s by the
+      brilliant MIT Professor of Management Jay Forrester.
+    </p>
+    <p class="my-2">
+      There are many different programs today—Stella, Vensim, Simulink, System
+      Modeler, to mention but a few. Minsky’s unique feature in this crowded
+      marketplace is its capacity to model financial dynamics: systems involving
+      the exchange, creation and destruction of money.
+    </p>
+    <p class="my-2">
+      Minsky does this using what we call Godley Tables.1 System dynamics
+      programs were arguably the first-ever computer programs to employ a GUI
+      (“Graphical User Interface”). Godley Tables employ a GUI that long
+      predates computers: the accountant’s device of “Double-entry Bookkeeping”.
+      Double-entry Bookkeeping (DEB for short) was invented so that merchants
+      could be sure that their financial transactions were accurately recorded.
+    </p>
+    <div>
+      <p class="my-2">
+        Though it takes a degree in accounting (or at least a course in
+        bookkeeping) to fully understand it, DEB boils down to two simple
+        principles:
+      </p>
+      <ol class="list-decimal ml-12">
+        <li>
+          All financial claims are classified as either Assets or Liabilities;
+        </li>
+        <li>All financial transactions are recorded twice.</li>
+      </ol>
+    </div>
+    <p class="my-2">
+      Assets are financial claims on another person or entity; Liabilities are a
+      financial claim that another person or entity has on you. For any person
+      or entity (a business, charity, etc.), the gap between its Assets and its
+      Liabilities is its net worth, which is called its Equity.
+    </p>
+    <p class="my-2">
+      The recording of all transactions twice enables a check on the accuracy of
+      an accountant’s books via the formula that: • 𝐴𝐴𝐴𝐴𝐴𝐴𝑒𝑒𝐴𝐴𝐴𝐴 −
+      𝐿𝐿𝐿𝐿𝐿𝐿𝐿𝐿𝐿𝐿𝐿𝐿𝐿𝐿𝐴𝐴𝐿𝐿𝑒𝑒𝐴𝐴 = 𝐸𝐸𝐸𝐸𝐸𝐸𝐿𝐿𝐴𝐴𝐸𝐸, or • 𝐴𝐴𝐴𝐴𝐴𝐴𝑒𝑒𝐴𝐴𝐴𝐴 −
+      𝐿𝐿𝐿𝐿𝐿𝐿𝐿𝐿𝐿𝐿𝐿𝐿𝐿𝐿𝐴𝐴𝐿𝐿𝑒𝑒𝐴𝐴 − 𝐸𝐸𝐸𝐸𝐸𝐸𝐿𝐿𝐴𝐴𝐸𝐸 = 0 In accounting, if a given
+      transaction is properly recorded, then this equation will hold. If there’s
+      a mistake, this equation is violated.
+    </p>
+    <p class="my-2">
+      This simple set of rules enables accountants to show the state of a
+      business. Minsky uses this “fundamental accounting equation” to enable you
+      to build a model of financial dynamics easily and rapidly, without the
+      messy wiring of the standard system dynamics “flowchart” paradigm.
+    </p>
+    <p class="my-2">
+      Instead, we use Godley Tables, where all claims are recorded as either
+      Assets (A) or Liabilities (L), the Equity (E) of each entity in a model is
+      tracked, and any error is checked by the simple rule 𝐴𝐴 − 𝐿𝐿 − 𝐸𝐸 = 0.
+      Figure 4 show a blank Godley Table.
+    </p>
+
+    <p class="my-2">
+      This simple GUI makes it easy to answer questions that are still
+      contentious in economics and finance today: • Do banks lend out deposits,
+      or do they create money “from nothing”? • Do banks lend out reserves, or
+      do loans create deposits with no need for reserves?
+    </p>
+    <p class="my-2">
+      Economics textbooks argue that banks need deposits in order to be able
+      lend, and that reserves— the cash that banks have in their vaults, plus
+      the funds that private banks have in their own deposit accounts at the
+      Central Bank—play an essential role in lending and money creation. In
+      2014, the Bank of England said that the textbooks were wrong: “The reality
+      of how money is created today differs from the description found in some
+      economics textbooks: • Rather than banks receiving deposits when
+      households save and then lending them out, bank lending creates deposits.
+      • In normal times, the central bank does not fix the amount of money in
+      circulation, nor is central bank money ‘multiplied up’ into more loans and
+      deposits.” McLeay, 2014 #5066, p. 41
+    </p>
+    <div class="my-4">
+      <div class="flex gap-4"></div>
+    </div>
+
+    } @case (2) {
+    <h1>Section 2</h1>
+    } }
+  </div>
+</div>
